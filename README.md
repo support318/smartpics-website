@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SmartPics.ai Website
 
-## Getting Started
+A modern, responsive Next.js website for SmartPics.ai - AI-powered image optimization for WordPress.
 
-First, run the development server:
+## 🚀 Live Demo
+[smartpics.ai](https://smartpics.ai)
+
+## 📋 Features
+
+- **Landing Page** - Hero, Features, Pricing, Testimonials, FAQ
+- **Features Page** - Detailed breakdown of all features
+- **How It Works** - Step-by-step process visualization
+- **Pricing Page** - Three-tier pricing with comparison
+- **Blog** - 3 blog posts with SEO optimization
+- **Testimonials** - Customer reviews with star ratings
+- **FAQ Section** - Accordion-style frequently asked questions
+- **Responsive Design** - Mobile-first with glass morphism UI
+- **SEO Optimized** - Sitemap, robots.txt, meta tags
+- **Dark Theme** - Consistent dark design throughout
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Type Safety**: TypeScript
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Push to GitHub**:
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/smartpics-website.git
+   git push -u origin master
+   ```
+
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up with your GitHub account
+   - Click "Add New Project"
+   - Import your repository
+   - Framework: Next.js (auto-detected)
+   - Build settings will be auto-configured
+   - Click "Deploy"
+
+3. **Auto-Deploy**:
+   - Vercel will auto-deploy on every push to `master`
+   - Preview deploys for pull requests
+   - Custom domain can be configured in Vercel dashboard
+
+### Manual Build
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+npm install
+
+# Build for production
+npm run build
+
+# Output will be in dist/ folder
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+smartpics-website/
+├── public/                  # Static assets
+│   ├── robots.txt
+│   └── sitemap.xml
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── page.tsx         # Homepage
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── globals.css      # Global styles
+│   │   ├── not-found.tsx    # 404 page
+│   │   ├── features/
+│   │   ├── how-it-works/
+│   │   ├── pricing/
+│   │   ├── blog/
+│   │   ├── contact/
+│   │   ├── docs/
+│   │   ├── privacy/
+│   │   └── terms/
+│   ├── components/
+│   │   ├── layout/          # Layout components
+│   │   │   └── PageLayout.tsx
+│   │   ├── sections/        # Page sections
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Features.tsx
+│   │   │   ├── Stats.tsx
+│   │   │   ├── Testimonials.tsx
+│   │   │   ├── Pricing.tsx
+│   │   │   ├── FAQ.tsx
+│   │   │   └── Footer.tsx
+│   │   └── ui/              # UI components
+│   └── lib/
+│       └── utils.ts         # Utility functions
+├── next.config.ts
+├── package.json
+├── tailwind.config.js
+└── tsconfig.json
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design System
 
-## Learn More
+- **Primary Colors**: Purple (#6D28D9), Blue (#3B82F6)
+- **Background**: Dark gradient (#0a0a1a to #1a103c)
+- **Glass Effect**: backdrop-blur with white/5% opacity
+- **Typography**: Inter (body), Calistoga (display)
+- **Animations**: Framer Motion for smooth transitions
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The `next.config.ts` is set up for static export:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+const nextConfig: NextConfig = {
+  output: 'export',
+  distDir: 'dist',
+  images: {
+    unoptimized: true,
+  },
+};
+```
 
-## Deploy on Vercel
+## 📱 Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page with all sections |
+| `/features` | Detailed feature breakdown |
+| `/how-it-works` | 4-step process page |
+| `/pricing` | Pricing plans |
+| `/blog` | Blog listing |
+| `/blog/[slug]` | Individual blog posts |
+| `/contact` | Contact form |
+| `/docs` | Documentation |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Blog Posts
+
+1. **Why Alt Text Matters in the Age of AI**
+2. **WebP vs AVIF: Which Image Format Should You Use?**
+3. **The Complete WordPress Image Optimization Guide**
+
+## 🧪 Development
+
+```bash
+# Start development server
+npm run dev
+
+# Run linter
+npm run lint
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## 📄 License
+
+MIT License - feel free to use this template for your projects.
+
+## 🤝 Contributing
+
+Contributions welcome! Please read the contributing guidelines first.
+
+---
+
+Made with ❤️ by SmartPics.ai Team
