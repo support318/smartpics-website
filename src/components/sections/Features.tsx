@@ -1,12 +1,12 @@
 "use client";
 
-import { Brain, Search, Target, MapPin, ImageIcon, Puzzle, Zap, Shield } from "lucide-react";
+import { Brain, Search, Target, MapPin, ImageIcon, Puzzle } from "lucide-react";
 
 const features = [
   {
     icon: Search,
     title: "Vector Embeddings",
-    description: "Images are converted into mathematical vectors that capture visual meaning. This allows AI to understand your content semantically—not just keyword match. Your images become searchable by concept, not just filename.",
+    description: "Images are converted into mathematical vectors that capture visual meaning. This allows AI to understand your content semantically.",
     color: "bg-blue-100 text-blue-600",
   },
   {
@@ -41,58 +41,37 @@ const features = [
   },
 ];
 
-const highlights = [
-  { icon: Search, label: "Vector Embeddings", desc: "Semantic AI understanding" },
-  { icon: Zap, label: "Lightning Fast", desc: "Optimized performance" },
-  { icon: Shield, label: "AI Visible", desc: "ChatGPT & Claude ready" },
-];
-
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="badge mb-4">Powerful Features</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Everything You Need for{" "}
-            <span className="text-blue-600">AI Visibility</span>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+            Powerful Features
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Everything You Need for <span className="text-blue-600">AI Visibility</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Make your images visible to AI assistants like ChatGPT and Claude. 
-            SmartPics automatically optimizes every aspect of your images.
+          <p className="text-lg text-slate-600 max-w-xl mx-auto">
+            Make your images visible to AI assistants like ChatGPT and Claude.
           </p>
         </div>
 
-        {/* Highlights Bar */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {highlights.map((item) => (
-            <div key={item.label} className="flex items-center gap-3 px-6 py-3 bg-slate-50 rounded-xl border border-slate-200">
-              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                <item.icon className="w-5 h-5 text-blue-600" />
-              </div>
-              <div>
-                <div className="text-slate-900 font-semibold">{item.label}</div>
-                <div className="text-sm text-slate-600">{item.desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="card group"
+              className="p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group"
             >
-              <div className={`w-12 h-12 rounded-xl ${feature.color} flex items-center justify-center mb-4`}>
-                <feature.icon className="w-6 h-6" />
+              <div className={`w-10 h-10 rounded-lg ${feature.color} flex items-center justify-center mb-4`}>
+                <feature.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>
