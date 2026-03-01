@@ -141,7 +141,7 @@ export default function Features() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-purple-400 mb-6"
+            className="inline-block px-4 py-2 rounded-full glass text-base font-medium text-purple-400 mb-6"
           >
             Powerful Features
           </motion.span>

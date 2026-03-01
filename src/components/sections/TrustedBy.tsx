@@ -23,7 +23,7 @@ export default function TrustedBy() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-white/60 text-sm uppercase tracking-wider font-medium">
+          <p className="text-white/60 text-base uppercase tracking-wider font-medium">
             Trusted by 10,000+ WordPress Sites
           </p>
         </motion.div>

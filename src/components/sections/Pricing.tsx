@@ -80,7 +80,7 @@ export default function Pricing() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-purple-400 mb-6"
+            className="inline-block px-4 py-2 rounded-full glass text-base font-medium text-purple-400 mb-6"
           >
             Pricing Plans
           </motion.span>
@@ -107,7 +107,7 @@ export default function Pricing() {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                  <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-sm font-medium shadow-lg shadow-purple-500/25">
+                  <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-base font-medium shadow-lg shadow-purple-500/25">
                     <Sparkles className="w-4 h-4" />
                     Most Popular
                   </span>

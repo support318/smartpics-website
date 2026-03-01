@@ -40,7 +40,7 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
             <HelpCircle className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-white/90">FAQ</span>
+            <span className="text-base font-medium text-white/90">FAQ</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked <span className="gradient-text">Questions</span>

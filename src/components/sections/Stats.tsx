@@ -91,7 +91,7 @@ export default function Stats() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-purple-400 mb-6">
+          <span className="inline-block px-4 py-2 rounded-full glass text-base font-medium text-purple-400 mb-6">
             Proven Results
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

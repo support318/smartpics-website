@@ -62,7 +62,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
           
           {/* Step Number Badge */}
           <div 
-            className="absolute -top-2 -right-2 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold text-white"
+            className="absolute -top-2 -right-2 w-7 h-7 rounded-full flex items-center justify-center text-base font-bold text-white"
             style={{ background: step.color }}
           >
             {index + 1}
@@ -85,7 +85,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
               className="w-2 h-2 rounded-full animate-pulse"
               style={{ background: step.color }}
             />
-            <span className="text-sm text-white/70">
+            <span className="text-base text-white/70">
               {index === 0 && "Automatic detection"}
               {index === 1 && "Behind-the-scenes AI"}
               {index === 2 && "SEO-optimized output"}
@@ -122,7 +122,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-cyan-400 mb-6"
+            className="inline-block px-4 py-2 rounded-full glass text-base font-medium text-cyan-400 mb-6"
           >
             Fully Automatic
           </motion.span>
@@ -173,7 +173,7 @@ export default function HowItWorks() {
                       <div className={`w-3 h-3 rounded-full ${item.color} ${item.status === 'automatic' ? 'animate-pulse' : ''}`} />
                       <span className="text-white font-medium">{item.label}</span>
                     </div>
-                    <span className="text-sm text-white/60 capitalize">{item.status}</span>
+                    <span className="text-base text-white/60 capitalize">{item.status}</span>
                   </div>
                 ))}
               </div>
@@ -182,11 +182,11 @@ export default function HowItWorks() {
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="glass rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-white">2 min</div>
-                  <div className="text-sm text-white/60">Setup Time</div>
+                  <div className="text-base text-white/60">Setup Time</div>
                 </div>
                 <div className="glass rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-white">Zero</div>
-                  <div className="text-sm text-white/60">Manual Work</div>
+                  <div className="text-base text-white/60">Manual Work</div>
                 </div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function HowItWorks() {
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm text-white">AI Visibility Active</span>
+                <span className="text-base text-white">AI Visibility Active</span>
               </div>
             </motion.div>
           </motion.div>

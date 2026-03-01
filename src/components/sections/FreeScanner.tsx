@@ -40,7 +40,7 @@ export default function FreeScanner() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-green-400 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-base font-medium text-green-400 mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Free — No Signup Required
