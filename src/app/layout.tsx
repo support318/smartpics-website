@@ -32,8 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark overflow-x-hidden">
       <body
-        className={`${inter.variable} ${calistoga.variable} antialiased overflow-x-hidden w-full`}
-        style={{ background: 'linear-gradient(135deg, #0a0a1a 0%, #1a103c 50%, #0f172a 100%)' }}
+        className={`${inter.variable} ${calistoga.variable} antialiased overflow-x-hidden w-full bg-[#0a0a0f]`}
       >
         {children}
       </body>
