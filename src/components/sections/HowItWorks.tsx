@@ -158,7 +158,7 @@ export default function HowItWorks() {
             <div className="relative glass-strong rounded-2xl p-8 border border-white/10">
               <div className="text-center mb-6">
                 <div className="text-white font-semibold text-lg mb-2">WordPress + SmartPics</div>
-                <div className="text-sm text-white/60">Seamless integration in minutes</div>
+                <div className="text-base text-white/60">Seamless integration in minutes</div>
               </div>
 
               {/* Integration Flow */}
@@ -173,7 +173,7 @@ export default function HowItWorks() {
                       <div className={`w-3 h-3 rounded-full ${item.color} ${item.status === 'automatic' ? 'animate-pulse' : ''}`} />
                       <span className="text-white font-medium">{item.label}</span>
                     </div>
-                    <span className="text-xs text-white/60 capitalize">{item.status}</span>
+                    <span className="text-sm text-white/60 capitalize">{item.status}</span>
                   </div>
                 ))}
               </div>
@@ -182,11 +182,11 @@ export default function HowItWorks() {
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="glass rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-white">2 min</div>
-                  <div className="text-xs text-white/60">Setup Time</div>
+                  <div className="text-sm text-white/60">Setup Time</div>
                 </div>
                 <div className="glass rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-white">Zero</div>
-                  <div className="text-xs text-white/60">Manual Work</div>
+                  <div className="text-sm text-white/60">Manual Work</div>
                 </div>
               </div>
             </div>

@@ -134,7 +134,7 @@ export default function Pricing() {
 
                 {/* Plan Name */}
                 <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mb-6 min-h-[40px]">{plan.description}</p>
+                <p className="text-gray-400 text-base mb-6 min-h-[40px]">{plan.description}</p>
 
                 {/* Price */}
                 <div className="mb-8">
@@ -142,7 +142,7 @@ export default function Pricing() {
                     <span className="text-5xl font-bold text-white">${plan.price}</span>
                     <span className="text-gray-400">/month</span>
                   </div>
-                  <div className="text-sm text-gray-500 mt-1">Billed annually or ${plan.price + 10}/month</div>
+                  <div className="text-base text-gray-500 mt-1">Billed annually or ${plan.price + 10}/month</div>
                 </div>
 
                 {/* Features */}
@@ -154,7 +154,7 @@ export default function Pricing() {
                       }`}>
                         <Check className={`w-3 h-3 ${plan.popular ? 'text-purple-400' : 'text-gray-400'}`} />
                       </div>
-                      <span className="text-gray-300 text-sm">{feature}</span>
+                      <span className="text-gray-300 text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -191,7 +191,7 @@ export default function Pricing() {
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <span className="text-xl">{item.icon}</span>
-                <span className="text-gray-400 text-sm">{item.label}</span>
+                <span className="text-gray-400 text-base">{item.label}</span>
               </div>
             ))}
           </div>

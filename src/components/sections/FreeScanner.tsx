@@ -91,7 +91,7 @@ export default function FreeScanner() {
               {!scanComplete ? (
                 <form onSubmit={handleScan} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
+                    <label className="block text-base font-medium text-white/80 mb-2">
                       Enter your website URL
                     </label>
                     <div className="relative">
@@ -130,7 +130,7 @@ export default function FreeScanner() {
                     )}
                   </button>
 
-                  <p className="text-center text-white/50 text-sm">
+                  <p className="text-center text-white/50 text-base">
                     Results in under 60 seconds
                   </p>
                 </form>
@@ -156,13 +156,13 @@ export default function FreeScanner() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="glass rounded-xl p-4 text-center">
                       <div className="text-3xl font-bold text-yellow-400 mb-1">38%</div>
-                      <div className="text-sm text-white/60">Missing Alt Text</div>
-                      <div className="text-xs text-yellow-400 mt-1">Critical</div>
+                      <div className="text-base text-white/60">Missing Alt Text</div>
+                      <div className="text-sm text-yellow-400 mt-1">Critical</div>
                     </div>
                     <div className="glass rounded-xl p-4 text-center">
                       <div className="text-3xl font-bold text-red-400 mb-1">HIGH</div>
-                      <div className="text-sm text-white/60">SEO Impact</div>
-                      <div className="text-xs text-red-400 mt-1">At Risk</div>
+                      <div className="text-base text-white/60">SEO Impact</div>
+                      <div className="text-sm text-red-400 mt-1">At Risk</div>
                     </div>
                   </div>
 

@@ -105,7 +105,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
           {feature.title}
         </h3>
         
-        <p className="text-gray-300 leading-relaxed text-sm">
+        <p className="text-gray-300 leading-relaxed text-base">
           {feature.description}
         </p>
 
@@ -171,7 +171,7 @@ export default function Features() {
               </div>
               <div>
                 <div className="text-white font-semibold">{item.label}</div>
-                <div className="text-sm text-gray-300">{item.desc}</div>
+                <div className="text-base text-gray-300">{item.desc}</div>
               </div>
             </div>
           ))}
