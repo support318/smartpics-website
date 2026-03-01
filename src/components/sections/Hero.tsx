@@ -100,7 +100,7 @@ export default function Hero() {
               ].map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
                   <div className="text-3xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                  <div className="text-base text-white/60 mt-1">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -126,7 +126,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <div className="text-white font-semibold text-lg">SmartPics Dashboard</div>
-                    <div className="text-sm text-white/50">WordPress Plugin</div>
+                    <div className="text-base text-white/50">WordPress Plugin</div>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -148,7 +148,7 @@ export default function Hero() {
                       <card.icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-white">{card.value}</div>
-                    <div className="text-xs text-white/60 mt-1">{card.label}</div>
+                    <div className="text-sm text-white/60 mt-1">{card.label}</div>
                   </div>
                 ))}
               </div>
@@ -165,14 +165,14 @@ export default function Hero() {
                       <ImageIcon className="w-6 h-6 text-purple-400" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-white text-sm font-medium truncate">{item.name}</div>
-                      <div className="flex items-center gap-2 text-xs text-white/50 mt-1">
+                      <div className="text-white text-base font-medium truncate">{item.name}</div>
+                      <div className="flex items-center gap-2 text-sm text-white/50 mt-1">
                         <span className="line-through">{item.before}</span>
                         <ArrowRight className="w-3 h-3" />
                         <span className="text-green-400 font-medium">{item.after}</span>
                       </div>
                     </div>
-                    <span className={`text-xs px-3 py-1.5 rounded-full font-medium ${
+                    <span className={`text-sm px-3 py-1.5 rounded-full font-medium ${
                       item.status === "Optimized" 
                         ? "bg-green-500/20 text-green-400" 
                         : "bg-yellow-500/20 text-yellow-400"
@@ -183,40 +183,6 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-
-            {/* Floating Notification - Positioned Better */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="absolute -right-4 top-8 glass rounded-xl p-4 border border-purple-500/30 shadow-xl max-w-[220px]"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <Sparkles className="w-3 h-3 text-green-400" />
-                </div>
-                <span className="text-xs text-white/80 font-medium">AI Alt Text Ready</span>
-              </div>
-              <div className="text-sm text-white/90 line-clamp-2">"Professional product photography studio shot..."</div>
-            </motion.div>
-
-            {/* Floating Stat - Positioned Better */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="absolute -left-4 bottom-12 glass rounded-xl p-4 border border-blue-500/30 shadow-xl"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                  <Gauge className="w-5 h-5 text-blue-400" />
-                </div>
-                <div>
-                  <div className="text-lg font-bold text-white">Semantic</div>
-                  <div className="text-xs text-white/60">Search Optimized</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 
@@ -240,14 +206,14 @@ export default function Hero() {
               className="flex items-center gap-2 px-5 py-2.5 rounded-full glass hover:bg-white/10 transition-colors cursor-default"
             >
               <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400" />
-              <span className="text-sm text-white/80">{feature}</span>
+              <span className="text-base text-white/80">{feature}</span>
             </div>
           ))}
         </motion.div>
       </div>
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a1a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0f] to-transparent z-10 pointer-events-none" />
     </section>
   );
 }
