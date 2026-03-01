@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed text-center">
             Powered by vector embeddings—images become semantic data that AI truly understands. 
             SmartPics converts visuals into searchable concepts and generates SEO-optimized alt text.
           </p>
