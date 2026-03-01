@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, Sparkles, Zap, Building2, Rocket } from "lucide-react";
+import Link from "next/link";
+import { Check, Rocket, Zap, Building2 } from "lucide-react";
 
 const plans = [
   {
@@ -18,7 +18,6 @@ const plans = [
       "1 website",
     ],
     popular: false,
-    color: "from-gray-600 to-gray-500",
   },
   {
     name: "Professional",
@@ -36,7 +35,6 @@ const plans = [
       "5 websites",
     ],
     popular: true,
-    color: "from-purple-600 to-blue-600",
   },
   {
     name: "Enterprise",
@@ -55,147 +53,97 @@ const plans = [
       "Unlimited websites",
     ],
     popular: false,
-    color: "from-amber-600 to-orange-600",
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-600/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="pricing" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full glass text-base font-medium text-purple-400 mb-6"
-          >
-            Pricing Plans
-          </motion.span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Simple, <span className="gradient-text">Transparent</span> Pricing
+        <div className="text-center mb-16">
+          <span className="badge mb-4">Pricing Plans</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Simple, <span className="text-blue-600">Transparent</span> Pricing
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Choose the plan that fits your needs. All plans include a 14-day free trial.
           </p>
-        </motion.div>
+        </div>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <motion.div
+          {plans.map((plan) => (
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className={`relative rounded-2xl ${plan.popular ? 'md:-mt-4 md:mb-4' : ''}`}
+              className={`card relative ${plan.popular ? 'border-blue-500 ring-1 ring-blue-500' : ''}`}
             >
-              {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                  <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-base font-medium shadow-lg shadow-purple-500/25">
-                    <Sparkles className="w-4 h-4" />
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">
                     Most Popular
                   </span>
                 </div>
               )}
+              
+              <div className="mb-6">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                  <plan.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">{plan.name}</h3>
+                <p className="text-slate-600 text-sm mt-2">{plan.description}</p>
+              </div>
 
-              {/* Card */}
-              <div 
-                className={`relative h-full rounded-2xl p-8 border ${
-                  plan.popular 
-                    ? 'glass-strong border-purple-500/30 shadow-2xl shadow-purple-500/10' 
-                    : 'glass border-white/5'
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-slate-900">${plan.price}</span>
+                <span className="text-slate-600">/month</span>
+                <p className="text-sm text-slate-500 mt-1">
+                  Billed annually or ${plan.price + 10}/month
+                </p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span className="text-slate-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/pricing"
+                className={`block w-full text-center py-3 rounded-lg font-semibold transition-colors ${
+                  plan.popular
+                    ? 'bg-blue-600 text-white hover:bg-blue-700'
+                    : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
                 }`}
               >
-                {/* Gradient Border for Popular */}
-                {plan.popular && (
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-purple-500/20 to-blue-500/20 -z-10 blur-sm" />
-                )}
-
-                {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${plan.color} flex items-center justify-center mb-6 shadow-lg`}>
-                  <plan.icon className="w-7 h-7 text-white" />
-                </div>
-
-                {/* Plan Name */}
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-gray-400 text-base mb-6 min-h-[40px]">{plan.description}</p>
-
-                {/* Price */}
-                <div className="mb-8">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-5xl font-bold text-white">${plan.price}</span>
-                    <span className="text-gray-400">/month</span>
-                  </div>
-                  <div className="text-base text-gray-500 mt-1">Billed annually or ${plan.price + 10}/month</div>
-                </div>
-
-                {/* Features */}
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                        plan.popular ? 'bg-purple-500/20' : 'bg-gray-700'
-                      }`}>
-                        <Check className={`w-3 h-3 ${plan.popular ? 'text-purple-400' : 'text-gray-400'}`} />
-                      </div>
-                      <span className="text-gray-300 text-base">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button
-                  className={`w-full py-4 rounded-xl font-semibold transition-all ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25'
-                      : 'glass hover:bg-white/10 text-white'
-                  }`}
-                >
-                  Get Started
-                </button>
-              </div>
-            </motion.div>
+                Get Started
+              </Link>
+            </div>
           ))}
         </div>
 
         {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="glass inline-flex flex-wrap justify-center gap-8 rounded-2xl px-8 py-6">
-            {[
-              { label: "14-day free trial", icon: "🎁" },
-              { label: "No credit card required", icon: "💳" },
-              { label: "Cancel anytime", icon: "✓" },
-              { label: "24/7 Support", icon: "🎧" },
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <span className="text-xl">{item.icon}</span>
-                <span className="text-gray-400 text-base">{item.label}</span>
-              </div>
-            ))}
+        <div className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-slate-600">
+          <div className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-green-600" />
+            14-day free trial
           </div>
-        </motion.div>
+          <div className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-green-600" />
+            No credit card required
+          </div>
+          <div className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-green-600" />
+            Cancel anytime
+          </div>
+          <div className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-green-600" />
+            24/7 Support
+          </div>
+        </div>
       </div>
     </section>
   );

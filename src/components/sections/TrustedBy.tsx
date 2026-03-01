@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const companies = [
   { name: "WordPress", logo: "W" },
   { name: "WooCommerce", logo: "WC" },
@@ -15,46 +13,24 @@ const companies = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-20 relative overflow-hidden border-y border-white/5">
+    <section className="py-16 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="text-white/60 text-base uppercase tracking-wider font-medium">
-            Trusted by 10,000+ WordPress Sites
-          </p>
-        </motion.div>
+        <p className="text-center text-slate-600 text-sm uppercase tracking-wider font-semibold mb-10">
+          Trusted by 10,000+ WordPress Sites
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-4 md:grid-cols-8 gap-8 items-center"
-        >
-          {companies.map((company, index) => (
-            <motion.div
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-6 items-center">
+          {companies.map((company) => (
+            <div
               key={company.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex items-center justify-center"
             >
-              <div className="group relative">
-                <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold text-white/40 group-hover:text-white/80 group-hover:bg-white/10 transition-all duration-300">
-                  {company.logo}
-                </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/40 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  {company.name}
-                </span>
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-xl font-bold text-slate-700 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300">
+                {company.logo}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
