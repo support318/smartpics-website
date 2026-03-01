@@ -16,8 +16,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-5 leading-tight">
-            Make Your WordPress Images{" "}
-            <span className="text-blue-600">AI-Search Ready</span>
+            Make Your WordPress Images <span className="text-blue-600 whitespace-nowrap">AI-Search Ready</span>
           </h1>
 
           {/* Subheadline */}

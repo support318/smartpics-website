@@ -59,11 +59,11 @@ export default function Features() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group"
+              className="w-full max-w-sm p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group"
             >
               <div className={`w-10 h-10 rounded-lg ${feature.color} flex items-center justify-center mb-4`}>
                 <feature.icon className="w-5 h-5" />
