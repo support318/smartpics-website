@@ -44,22 +44,22 @@ const features = [
 export default function Features() {
   return (
     <section id="features" className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
             Powerful Features
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Everything You Need for <span className="text-blue-600">AI Visibility</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-xl mx-auto">
+          <p className="text-lg text-slate-600">
             Make your images visible to AI assistants like ChatGPT and Claude.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
             <div
               key={feature.title}
